@@ -22,6 +22,9 @@ namespace GestionVehiculos
                 Console.WriteLine("1. Listar vehículos");
                 Console.WriteLine("2. Mostrar impuestos");
                 Console.WriteLine("3. Agregar vehículo");
+                Console.WriteLine("4. Buscar vehículos por marca");
+                Console.WriteLine("5. Calcular total de impuestos");
+
                 Console.WriteLine("0. Salir");
                 Console.Write("Seleccione una opción: ");
                 opcion = int.Parse(Console.ReadLine());
@@ -37,6 +40,15 @@ namespace GestionVehiculos
                     case 3:
                         AgregarVehiculoMenu(registro);
                         break;
+                    case 4:
+                        Console.Write("Ingrese la marca a buscar: ");
+                        string marca = Console.ReadLine();
+                        registro.BuscarPorMarca(marca);
+                        break;
+                    case 5:
+                        registro.CalcularTotalImpuestos();
+                        break;
+
                 }
             } while (opcion != 0);
         }
